@@ -1,0 +1,11 @@
+FROM ayu:3
+RUN apt-get update &&\
+  apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev git curl wget libpq-dev nodejs
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+RUN $HOME/.rbenv/bin/rbenv install 2.3.0
+RUN $HOME/.rbenv/bin/rbenv global 2.3.0
+RUN $HOME/.rbenv/versions/2.3.0/bin/gem install bundler -v 2.0.2
+CMD ["/etc/init.d/postgresql", "start"]
