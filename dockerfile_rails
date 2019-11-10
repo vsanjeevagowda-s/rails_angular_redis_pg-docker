@@ -1,4 +1,4 @@
-FROM ayu:3
+FROM dockerfile_pg:1
 RUN apt-get update &&\
   apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev git curl wget libpq-dev nodejs vim tcl redis-server
 RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
