@@ -18,6 +18,7 @@ EXPOSE 5432
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 RUN apt-get update &&\
   apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev git curl wget libpq-dev vim tcl redis-server
+USER ayu
 RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -27,7 +28,7 @@ RUN $HOME/.rbenv/bin/rbenv global 2.3.0
 RUN $HOME/.rbenv/bin/rbenv install 2.5.0
 RUN $HOME/.rbenv/versions/2.3.0/bin/gem install bundler -v 1.17.3
 RUN $HOME/.rbenv/versions/2.5.0/bin/gem install rails -v 4.2.4
-WORKDIR /root
+USER root
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
@@ -48,5 +49,3 @@ EXPOSE 9000
 COPY Readme.docker.build.md .
 COPY Readme.env.setup.md .
 CMD [ "./entrypoint.sh" ]
-
-
