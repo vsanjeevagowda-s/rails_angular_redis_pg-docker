@@ -8,9 +8,9 @@
 
 ( User will be logged in as 'root' user )
 
-* $ usermod -u <userid of the hostmachine> ayu
+* $ usermod -u {userid of the hostmachine} ayu
 
-* $ groupmod -g <groupid of the hostmachine> ayu
+* $ groupmod -g ${groupid of the hostmachine} ayu
 
 * $ su ayu
 
@@ -22,7 +22,7 @@
 
 * $ go to URl: https://hub.docker.com/repository/docker/rramuu1234/rails_angular_redis_pg
 
-* $ docker pull rramuu1234/rails_angular_redis_pg:2
+* $ docker pull rramuu1234/rails_angular_redis_pg:3
 
 * $ docker run -v /home/venku/Documents/projects/:/home/ayu/Documents/ -p 3000:3000 -p 3001:3001 -p 9000:9000 -d rramuu1234/rails_angular_redis_pg:3
 
@@ -30,9 +30,9 @@
 
 ( User will be logged in as 'root' user )
 
-* $ usermod -u <userid of the hostmachine> ayu
+* $ usermod -u {userid of the hostmachine} ayu
 
-* $ groupmod -g <groupid of the hostmachine> ayu
+* $ groupmod -g {groupid of the hostmachine} ayu
 
 * $ su ayu
 
