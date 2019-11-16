@@ -47,10 +47,10 @@ angular.module('config', [])
 .constant('ENV', { name: 'it', api_path: 'http://localhost:3000/' });
 ```
 
-* $ cd /root/Documents/Angular-homeautomation
+* $ cd /ayu/Documents/Angular-homeautomation
 
 * $ npm install
 
-* $ bower install --allow-root
+* $ bower install
 
 * $ gulp serve
